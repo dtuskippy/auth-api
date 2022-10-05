@@ -33,7 +33,7 @@ describe('Auth Middleware', () => {
     it('fails a login for a user (admin) with an incorrect token', async () => {
 
       req.headers = {
-        authorization: 'Bearer thisisabadtoken',
+        authorization: 'Bearer this is a bad token',
       };
 
       await bearer(req, res, next);

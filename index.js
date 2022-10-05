@@ -1,9 +1,13 @@
 'use strict';
 
 const { db } = require('./src/models');
-const server = require('./src/server.js');
-const PORT = process.env.PORT || 3002;
+const { start } = require('./src/server.js');
 
-db.sync().then(() => {
-  server.start(PORT);
-});
+db.sync()
+  .then(() => {
+    console.log('Successfully connected to Database!');
+    start();
+  })
+  .catch((e) => console.error(e));
+
+

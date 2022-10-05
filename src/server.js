@@ -14,8 +14,10 @@ const v1Routes = require('./routes/v1.js');
 const v2Routes = require('./routes/v2.js');
 
 const app = express();
+const PORT = process.env.PORT || 3002;
 app.use(cors());
 app.use(morgan('dev'));
+
 
 
 app.use(express.json());
@@ -34,8 +36,5 @@ app.use(errorHandler);
 
 module.exports = {
   server: app,
-  start: port => {
-    if (!port) { throw new Error('Missing Port'); }
-    app.listen(port, () => console.log(`Listening on ${port}`));
-  },
+  start: () => app.listen(PORT, console.log('Server running on: ', PORT)),
 };
