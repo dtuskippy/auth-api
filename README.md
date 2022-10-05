@@ -14,7 +14,6 @@
 
 [chelko-auth-api-prod](https://chelko-auth-api-prod.herokuapp.com/)
 
-
 ### Requirements
 
 * API/Auth server must be deployed
